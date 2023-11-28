@@ -1,5 +1,5 @@
 <script lang="ts">
-    // TypeScript script part (if needed for interactivity)
+    import logo from "$lib/logo.png";
   </script>
   
   <!-- Team Profiles Section -->
@@ -26,7 +26,7 @@
         
         <!-- Team Name and Logo -->
         <div class="text-center mb-4">
-          <img src="src/lib/logo.png" alt="Team Logo" class="mx-auto mb-2 h-96 w-96">
+          <img src={logo} alt="Team Logo" class="mx-auto mb-2 h-96 w-96">
           <h3 class="font-semibold text-xl">Innovators in VR Health</h3>
         </div>
   

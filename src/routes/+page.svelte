@@ -1,11 +1,11 @@
 <script lang="ts">
-    // TypeScript script part (if needed for interactivity)
+    import VR from "$lib/VR_IMAGE.png";
   </script>
   
   <!-- A Div With A Centered Product Image -->
   <div class="w-screen h-screen flex flex-col justify-center items-center">
       <div class="flex justify-center items-center mb-8">
-          <img src="src/lib/VR_IMAGE.png" alt="VR Health Monitoring System" class="max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg" />
+          <img src={VR} alt="VR Health Monitoring System" class="max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg" />
       </div>
   
       <section class="helped text-center w-full px-4 md:px-8 lg:px-12 h-full" aria-hidden="true">
