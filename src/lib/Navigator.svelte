@@ -1,12 +1,35 @@
 <script lang="ts">
-   let isNavOpen = false; 
+  let isNavOpen = false;
+
+  const menuItems = [
+    { path: '/', label: 'Home' },
+    { path: '/Background', label: 'Background' },
+    { path: '/Profiles', label: 'Profiles' },
+    { path: '/Plan', label: 'Plan' },
+    { path: '/StakeholderAnalysis', label: 'Stakeholder Analysis' },
+    { path: '/Requirements', label: 'Requirements' },
+    { path: '/Conops', label: 'Conops' },
+    { path: '/Pugh_Matrix', label: 'Pugh Matrix' },
+  ];
+
+  var currentPath = "Home";
+
+  function updateCurrentPage(name: string) {
+    currentPath = name;
+  }
+
+  function isActive(name: string) {
+    return currentPath === name;
+  }
+
 </script>
+
 
 <nav class="bg-white border-gray-200">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
       <img src="https://cdn-icons-png.flaticon.com/512/3197/3197712.png" class="h-8" alt="Flowbite Logo" />
-      <span class="self-center text-2xl font-semibold whitespace-nowrap">EE 498</span>
+      <span class="self-center text-2xl font-semibold whitespace-nowrap">EE 496</span>
     </a>
     <button on:click={() => isNavOpen = !isNavOpen} type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
       <span class="sr-only">Open main menu</span>
@@ -16,52 +39,35 @@
     </button>
     <!-- Navigation items for mobile view -->
     {#if isNavOpen}
-      <div class="w-full md:hidden">
-        <ul class="font-medium flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50">
+    <div class="w-full md:hidden">
+      <ul class="font-medium flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50">
+        {#each menuItems as item}
           <li>
-            <a href="/" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+            <a href="{item.path}" class:active={isActive(item.path)} class="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0" on:click={() => updateCurrentPage(item.path)}>
+              {item.label}
           </li>
-          <li>
-            <a href="/Background" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">Background</a>
-          </li>
-          <li>
-            <a href="Profiles" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">Profiles</a>
-          </li>
-          <li>
-            <a href="/Plan" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">Plan</a>
-          </li>
-            <li>
-                <a href="/StakeholderAnalysis" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">Stakeholder Analysis</a>
-            </li>
-            <li>
-                <a href="/Requirements" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0   ">Requirements</a>
-            </li>
-        </ul>
-      </div>
-    {/if}
-    <!-- How we handle the nav bar normally when we're not in mobile -->
-      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
-          <li>
-            <a href="/" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
-          </li>
-          <li>
-            <a href="/Background" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">Background</a>
-          </li>
-          <li>
-            <a href="Profiles" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">Profiles</a>
-          </li>
-          <li>
-            <a href="/Plan" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">Plan</a>
-          </li>
-            <li>
-                <a href="/StakeholderAnalysis" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 ">Stakeholder Analysis</a>
-            </li>
-            <li>
-                <a href="/Requirements" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0   ">Requirements</a>
-            </li>
-        </ul>
-      </div>
+        {/each}
+      </ul>
     </div>
-  </nav>
+  {/if}
+     <!-- Regular Layout -->
+  <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+    <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
+      {#each menuItems as item}
+        <li>
+          <a href={item.path} class:active={isActive(item.path)} class="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 " on:click={() => updateCurrentPage(item.path)}>
+            {item.label}
+          </a>
+        </li>
+      {/each}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .active {
+    background-color: #2563EB;
+    color: white;
+  }
+</style>
   

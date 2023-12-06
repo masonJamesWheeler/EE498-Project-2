@@ -1,5 +1,7 @@
 <script lang="ts">
     import logo from "$lib/logo.png";
+    import AudreyHeadshot from "$lib/Audrey_ProfilePic.png";
+    import TimofeyHeadshot from "$lib/Timofey_ProfilePic.png";
   </script>
   
   <!-- Team Profiles Section -->
@@ -7,7 +9,7 @@
     <div class="container mx-auto px-4">
       <h1 class="text-4xl font-bold text-center mb-6">Our Team</h1>
       
-      <!-- Team Member Profiles -->
+      <!-- Mason's Profile -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         <!-- Team Member 1 -->
         <div class="bg-white shadow-lg rounded-lg p-4 text-center">
@@ -15,9 +17,32 @@
           <h2 class="font-semibold text-xl">Mason Wheeler</h2>
           <p class="text-gray-600">Project Manager</p>
           <p>Email: masewheeler@outlook.com</p>
+          <p>Phone: (360)-975-8555 </p>
         </div>
+
+        <!-- Audrey Profile  -->
+        <div class="bg-white shadow-lg rounded-lg p-4 text-center">
+          <img src={AudreyHeadshot} alt="Audrey" class="w-32 h-32 object-contain mx-auto mb-4">
+          <h2 class="font-semibold text-xl">Audrey Chang</h2>
+          <p class="text-gray-600">Software Developer</p>
+          <p>Email: changaud@uw.edu</p>
+          <p> Phone: (253)332-0407 </p>
+        </div>
+
+        <!-- Timofey Profile Timofey Popov
+            Group Creative Director
+            (425)-638-3555, popovt@uw.edu
+              -->
+        <div class="bg-white shadow-lg rounded-lg p-4 text-center">
+          <img src={TimofeyHeadshot} alt="Timofey" class="w-32 h-32 object-contain mx-auto mb-4">
+          <h2 class="font-semibold text-xl">Timofey Popov</h2>
+          <p class="text-gray-600">Group Creative Director</p>
+          <p>Email: popovt@uw.edu</p>
+          <p>Phone: (425)-638-3555 </p>
+          </div>
+          
+
   
-        <!-- Additional team members here -->
       </div>
   
       <!-- Team Charter Section -->
