@@ -10,7 +10,9 @@
     { path: '/Requirements', label: 'Requirements' },
     { path: '/Conops', label: 'Conops' },
     { path: '/Pugh_Matrix', label: 'Pugh Matrix' },
-  ];
+    { path: '/Test_Plan', label: 'Test Plan' },
+    { path: '/SystemDesign', label: 'System Design' },
+];
 
   var currentPath = "Home";
 
