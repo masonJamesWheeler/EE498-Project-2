@@ -12,6 +12,9 @@
     { path: '/Pugh_Matrix', label: 'Pugh Matrix' },
     { path: '/Test_Plan', label: 'Test Plan' },
     { path: '/SystemDesign', label: 'System Design' },
+    { path: '/Failure&Mitigation', label: 'Failure & Mitigation' },
+    { path: '/Constraints', label: 'Constraints' },
+    { path: '/IEEEStandards', label: 'IEEE Standards' },
 ];
 
   var currentPath = "Home";
