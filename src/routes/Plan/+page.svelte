@@ -31,6 +31,16 @@
   <div class="bg-gray-100 py-8">
     <div class="container mx-auto px-4">
       <h1 class="text-4xl font-bold text-center mb-6">Project Plan</h1>
+
+        <!-- Week Labels -->
+        <div class="flex border-b mb-4">
+          <div class="w-1/4">Week #</div>
+          <div class="w-3/4 flex">
+              {#each Array.from({length: weeks}) as _, index}
+                  <div class="flex-1 text-center">{index + 1}</div>
+              {/each}
+          </div>
+      </div>
   
       <!-- Chart -->
       <div class="flex flex-col md:flex-row">

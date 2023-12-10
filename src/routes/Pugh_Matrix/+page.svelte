@@ -104,21 +104,16 @@ Based on the pugh matrix and utility analysis, it is clear that Concept A is the
     
     <!-- Pugh Matrix -->
     <div class="mb-8">
-                <!-- Add the legend here
-        - = worse than baseline
-        + = comparable to baseline
-        ++ = better than baseline
-        +++ = significantly better than baseline
-     -->
-     <div class="mb-4">
-         <h3 class="text-2xl font-semibold">Legend</h3>
-         <p>
-             (-) Worse than baseline (-1)
-             (+) comparable to baseline (+0)
-             (++) better than baseline (+1)
-             (+++) significantly better than baseline (+2)
-         </p>
-    </div>
+        <!-- Updated legend with new lines for each symbol -->
+        <div class="mb-4">
+            <h3 class="text-2xl font-semibold">Legend</h3>
+            <ul>
+                <li>(-) Worse than baseline (-1)</li>
+                <li>(+) Comparable to baseline (+0)</li>
+                <li>(++) Better than baseline (+1)</li>
+                <li>(+++) Significantly better than baseline (+2)</li>
+            </ul>
+        </div>
 
       <h2 class="text-3xl font-semibold mb-4">Pugh Matrix</h2>
       <table class="table-auto w-full mb-4">
@@ -257,4 +252,12 @@ Based on the pugh matrix and utility analysis, it is clear that Concept A is the
         </tbody>
       </table>
     </div>
+
+    <!-- Added Paragraph -->
+    <div class="mb-8">
+      <h2 class="text-3xl font-semibold mb-4">More Details</h2>
+      <p>
+        Based on the pugh matrix and utility analysis, it is clear that Concept A is the most desirable concept plan because it has a much lower cost and the efficiency is unmatched. However, concept B has more features and did not score significantly worse than the concept A, so we decided that a bracelet accessory was an important addition to the overall design.
+      </p>
     </div>
+  </div>
